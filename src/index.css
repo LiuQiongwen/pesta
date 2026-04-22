@@ -1,0 +1,415 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Cosmic Knowledge OS — always dark ─────────────────────────── */
+    --background: 220 20% 3%;
+    --foreground: 220 15% 88%;
+
+    --card: 220 20% 6%;
+    --card-foreground: 220 15% 88%;
+
+    --popover: 220 20% 5%;
+    --popover-foreground: 220 15% 88%;
+
+    /* Neon green as primary accent */
+    --primary: 145 100% 50%;
+    --primary-foreground: 220 20% 3%;
+    --primary-glow: 145 100% 65%;
+    --primary-dark: 145 80% 35%;
+
+    /* Cyan-blue as secondary accent */
+    --secondary: 185 85% 55%;
+    --secondary-foreground: 220 20% 3%;
+
+    --muted: 220 20% 10%;
+    --muted-foreground: 220 12% 45%;
+
+    --accent: 265 70% 65%;
+    --accent-foreground: 220 20% 3%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 220 15% 95%;
+
+    --border: 220 20% 14%;
+    --input: 220 20% 10%;
+    --ring: 145 100% 50%;
+    --radius: 0.5rem;
+
+    /* ── Glass toolbox tokens ────────────────────────────────────────── */
+    --glass-bg: rgba(5, 8, 14, 0.84);
+    --glass-border: rgba(0, 255, 102, 0.13);
+    --glass-border-active: rgba(0, 255, 102, 0.35);
+    --glass-glow: 0 0 0 1px rgba(0,255,102,0.20), 0 8px 40px rgba(0,0,0,0.7);
+    --glass-glow-cyan: 0 0 0 1px rgba(102,240,255,0.20), 0 8px 40px rgba(0,0,0,0.7);
+
+    /* ── Gradients ───────────────────────────────────────────────────── */
+    --gradient-primary: linear-gradient(135deg, hsl(145 100% 50%), hsl(185 85% 55%));
+    --gradient-cosmos: radial-gradient(ellipse at 50% 50%, rgba(0,255,102,0.04) 0%, transparent 70%);
+
+    /* ── Shadows ─────────────────────────────────────────────────────── */
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.5);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.6);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.7);
+    --shadow-glow: 0 0 24px rgba(0,255,102,0.18);
+    --shadow-glow-cyan: 0 0 24px rgba(102,240,255,0.15);
+
+    /* ── Transitions ─────────────────────────────────────────────────── */
+    --transition-smooth: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* ── Spring motion system ──────────────────────────────────────── */
+    --spring:        cubic-bezier(0.22, 1.00, 0.36, 1.00);
+    --spring-snap:   cubic-bezier(0.16, 1.00, 0.30, 1.00);
+    --spring-gentle: cubic-bezier(0.33, 1.00, 0.68, 1.00);
+    --dur-snap:      0.18s;
+    --dur-standard:  0.30s;
+    --dur-gentle:    0.50s;
+
+    /* Sidebar tokens (kept for legacy compatibility) */
+    --sidebar-background: 220 20% 4%;
+    --sidebar-foreground: 220 12% 55%;
+    --sidebar-primary: 145 100% 50%;
+    --sidebar-primary-foreground: 220 20% 3%;
+    --sidebar-accent: 220 20% 8%;
+    --sidebar-accent-foreground: 220 15% 80%;
+    --sidebar-border: 220 20% 10%;
+    --sidebar-ring: 145 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: #040508;
+  }
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* iOS momentum scroll suppression at root */
+  overscroll-behavior: none;
+}
+
+/* ── iOS / Mobile touch fixes ──────────────────────────────────────── */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+button, a, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Allow text selection in content areas */
+p, span, div[contenteditable], textarea, input {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Prevent elastic bounce scroll on iOS for the root */
+body {
+  position: fixed;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
+/* Safe area env() for notch / home indicator */
+:root {
+  --safe-top:    env(safe-area-inset-top,    0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left:   env(safe-area-inset-left,   0px);
+  --safe-right:  env(safe-area-inset-right,  0px);
+}
+
+:root {
+  --dock-bottom:  clamp(16px, 2.0vh,  28px);
+  --qbar-bottom:  clamp(100px, 11.5vh, 148px);
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,255,102,0.15); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,255,102,0.30); }
+
+/* ── Animations ───────────────────────────────────────────────────────── */
+
+/* ── Spring motion keyframes (unified) ─────────────────────────────── */
+@keyframes spring-in {
+  from { opacity: 0; transform: scale(0.94) translateY(8px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);   }
+}
+@keyframes spring-out {
+  from { opacity: 1; transform: scale(1)    translateY(0);   }
+  to   { opacity: 0; transform: scale(0.96) translateY(6px); }
+}
+@keyframes spring-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+@keyframes spring-down {
+  from { opacity: 1; transform: translateY(0);    }
+  to   { opacity: 0; transform: translateY(100%); }
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(14px) scale(0.96); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0)    scale(1);    }
+}
+@keyframes toast-out {
+  from { opacity: 1; transform: translateX(-50%) translateY(0)    scale(1);    }
+  to   { opacity: 0; transform: translateX(-50%) translateY(8px)  scale(0.97); }
+}
+
+/* ── Legacy aliases (kept for backward compat) ─────────────────────── */
+@keyframes cosmos-pulse {
+  0%,100% { opacity: 0.4; }
+  50%     { opacity: 0.9; }
+}
+@keyframes cosmos-window-in {
+  from { opacity: 0; transform: scale(0.94) translateY(-6px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+/* ── Unique scene animations (keep as-is) ──────────────────────────── */
+@keyframes flow-light {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(300%) skewX(-15deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0,255,102,0.15); }
+  50%       { box-shadow: 0 0 40px rgba(0,255,102,0.40); }
+}
+
+@keyframes node-flash {
+  0%   { transform: scale(1); opacity: 0.6; }
+  40%  { transform: scale(1.6); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(100%); }
+}
+
+@keyframes toolbox-in {
+  from { opacity: 0; transform: scale(0.94) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes edit-rim-pulse {
+  0%, 100% { opacity: 0.45; box-shadow: 0 0 0 0 rgba(102,240,255,0); }
+  50%       { opacity: 0.85; box-shadow: 0 0 18px 2px rgba(102,240,255,0.22); }
+}
+
+/* ── Mobile animations ──────────────────────────────────────── */
+@keyframes mobile-sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes mobile-sheet-down {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+/* ── Mobile-specific overrides ──────────────────────────────── */
+@media (max-width: 767px) {
+  :root {
+    --dock-bottom:  0px;
+    --qbar-bottom:  72px;
+    --touch-target: 44px;
+  }
+
+  /* Enforce minimum 44px touch targets on all interactive elements */
+  button,
+  [role="button"],
+  a {
+    min-height: var(--touch-target);
+  }
+
+  /* Momentum scrolling + prevent scroll chaining on all scrollable areas */
+  [style*="overflow-y"],
+  [style*="overflowY"] {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Prevent iOS text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+.animate-flow-light {
+  position: relative;
+  overflow: hidden;
+}
+.animate-flow-light::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,255,102,0.06), transparent);
+  animation: flow-light 2.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg,
+    hsl(var(--muted)) 0%, hsl(var(--border)) 50%, hsl(var(--muted)) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.animate-fade-up    { animation: fade-up     var(--dur-standard) var(--spring)      forwards; }
+.animate-fade-in    { animation: fade-in     var(--dur-standard) var(--spring-snap) forwards; }
+.animate-toolbox-in { animation: spring-in   var(--dur-standard) var(--spring)      forwards; }
+.animate-slide-up   { animation: spring-up   var(--dur-gentle)   var(--spring)      forwards; }
+.animate-spring-in  { animation: spring-in   var(--dur-standard) var(--spring)      both; }
+.animate-spring-out { animation: spring-out  var(--dur-standard) var(--spring)      both; }
+.animate-toast-in   { animation: toast-in    var(--dur-standard) var(--spring-snap) both; }
+
+/* ── Interaction utility hover classes ───────────────────────────── */
+/* Replace JS-driven onMouseEnter/Leave DOM mutations with pure CSS */
+.hover-bg-up:hover    { background: rgba(0,255,102,0.18) !important; }
+.hover-opacity-full   { transition: opacity 0.15s ease; }
+.hover-opacity-full:hover { opacity: 1 !important; }
+.hover-accent-press:active { opacity: 0.75; transform: scale(0.97); }
+
+/* ── Hint-pulse animation (used in CommandDock, DynamicIsland) ────── */
+@keyframes hint-pulse-ring {
+  0%   { opacity: 0.6; transform: scale(1);    }
+  60%  { opacity: 0;   transform: scale(1.55); }
+  100% { opacity: 0;   transform: scale(1.55); }
+}
+
+/* ── Tour onboarding overlay ──────────────────────────────────────── */
+@keyframes tour-fade-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes tour-hud-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes hint-pulse-ring {
+  0%   { opacity: 0.45; transform: scale(1); }
+  70%  { opacity: 0;    transform: scale(1.35); }
+  100% { opacity: 0;    transform: scale(1.35); }
+}
+
+/* ── Floating toolbox glass surface ─────────────────────────────────── */
+.toolbox-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+}
+.toolbox-glass.active {
+  border-color: var(--glass-border-active);
+  box-shadow: var(--glass-glow);
+}
+
+/* ── Prose for markdown in note overlay ─────────────────────────────── */
+.prose-cosmos {
+  @apply prose max-w-none;
+  --tw-prose-body: rgba(210,220,235,0.88);
+  --tw-prose-headings: rgba(230,240,255,0.95);
+  --tw-prose-links: #00ff66;
+  --tw-prose-bold: rgba(230,240,255,0.95);
+  --tw-prose-counters: #00ff66;
+  --tw-prose-bullets: rgba(0,255,102,0.50);
+  --tw-prose-hr: rgba(255,255,255,0.08);
+  --tw-prose-quotes: rgba(210,220,235,0.88);
+  --tw-prose-quote-borders: rgba(0,255,102,0.40);
+  --tw-prose-code: #66f0ff;
+  --tw-prose-pre-bg: rgba(5,8,14,0.90);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.prose-cosmos h2 {
+  font-size: 1.05rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding-bottom: 0.35em;
+  margin-top: 1.5em;
+}
+.prose-cosmos code:not(pre code) {
+  background: rgba(102,240,255,0.08);
+  color: #66f0ff;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25em;
+  font-size: 0.85em;
+}
+
+/* ── Prose-ping kept for Note page backward compat ────────────────── */
+.prose-ping {
+  @apply prose prose-slate max-w-none;
+  --tw-prose-body: rgba(210,220,235,0.85);
+  --tw-prose-headings: rgba(230,240,255,0.95);
+  --tw-prose-links: #00ff66;
+  --tw-prose-bold: rgba(230,240,255,0.95);
+  --tw-prose-counters: #00ff66;
+  --tw-prose-bullets: rgba(0,255,102,0.50);
+  --tw-prose-hr: rgba(255,255,255,0.08);
+  --tw-prose-quotes: rgba(210,220,235,0.85);
+  --tw-prose-quote-borders: rgba(0,255,102,0.40);
+  --tw-prose-code: #66f0ff;
+  --tw-prose-pre-bg: rgba(5,8,14,0.9);
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+.prose-ping p       { margin-top: 0.75em; margin-bottom: 0.75em; color: rgba(210,220,235,0.85); }
+.prose-ping h1, .prose-ping h2, .prose-ping h3 { font-weight: 700; color: rgba(230,240,255,0.95); margin-top: 1.75em; margin-bottom: 0.6em; line-height: 1.35; }
+.prose-ping h2      { font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.4em; }
+.prose-ping blockquote { background: rgba(0,255,102,0.04); border-left: 3px solid rgba(0,255,102,0.40); border-radius: 0 0.4rem 0.4rem 0; padding: 0.75em 1em; font-style: normal; margin: 1em 0; }
+.prose-ping code:not(pre code) { background: rgba(102,240,255,0.08); color: #66f0ff; padding: 0.12em 0.38em; border-radius: 0.28em; font-size: 0.86em; }
+.prose-ping pre     { background: rgba(5,8,14,0.90); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.5rem; }
+.prose-ping strong  { font-weight: 650; color: rgba(230,240,255,0.95); }
+.prose-ping hr      { border-color: rgba(255,255,255,0.08); margin: 2em 0; }
+
+/* ── Glass card shorthand ────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(5,8,14,0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,255,102,0.12);
+}
