@@ -10,8 +10,6 @@ Just describe what you want — Enter turns ideas into production-ready code.
 
 ## Project URLs
 
-**Live app:** https://2c7d5422f5cf4124a1ad62ec9df2e44e-latest.preview.enter.pro  
-**Edit & build in Enter:** https://enter.pro/project/2c7d5422f5cf4124a1ad62ec9df2e44e
 
 
 ---
@@ -49,14 +47,3 @@ This project uses:
 - shadcn-ui
 - Tailwind CSS
 
----
-
-## Deployment
-
-To deploy, open your Enter.pro project and click "Publish"
-
-Your app will automatically build and go live at your production URL.
-
----
-
-✨ Keep prompting, keep building — Enter.pro handles the rest.
