@@ -16,12 +16,6 @@ Just describe what you want — Enter turns ideas into production-ready code.
 
 ---
 
-## Continue building
-
-Keep developing your app directly in [Enter.pro](https://enter.pro/project/2c7d5422f5cf4124a1ad62ec9df2e44e).  
-Prompt new features, refine the UI, or connect integrations — all changes are versioned and synced automatically to GitHub.
-
----
 
 ## Local development
 
