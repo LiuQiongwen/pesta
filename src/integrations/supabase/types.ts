@@ -324,7 +324,7 @@ export type Database = {
           },
         ]
       }
-      log_events_0269e2f6_abb9_42d7_8279_f5a48823cc7a: {
+      log_events_188be290_d27b_4c19_b4ac_9819d6689895: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -345,7 +345,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_46c3c348_3b79_4c3d_8b99_c2509bb65c15: {
+      log_events_5030913d_919d_45da_be58_2567232231f5: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -366,7 +366,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_4ad1be3d_9ca6_4baf_bc8e_6f37309c4e4a: {
+      log_events_6fcb5d23_d440_4bbb_8560_dcff977de406: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -387,7 +387,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_4b245a39_6cf3_4183_9f5e_7792fc7a22c4: {
+      log_events_911ab298_0d82_4614_9365_5d13f35541c5: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -408,7 +408,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_4b89ec0e_fc4a_4184_b642_1317d666de5c: {
+      log_events_bd0eda0d_aac1_4d3b_a763_d94bb347f9e3: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -429,7 +429,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_805e9ddc_a6db_46e0_9f0d_5c8e9a26b973: {
+      log_events_ccf44609_d258_454c_b887_2371447cd0ae: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -450,7 +450,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_923c826f_aafb_4836_a12e_201beb59b897: {
+      log_events_eac90c0d_cebe_4f64_81ca_5b1239e7ac18: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -471,7 +471,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_a56dc5d4_b5c7_4ca8_8608_8049ccb148ab: {
+      log_events_ec49b127_2618_4a34_911f_79c8512da2c0: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -492,7 +492,7 @@ export type Database = {
         }
         Relationships: []
       }
-      log_events_c5bb6459_84b7_4f67_8191_8159ae0f28d5: {
+      log_events_fd40487b_bb2a_47d6_a017_3f1b3c6364ae: {
         Row: {
           body: Json | null
           event_message: string | null
@@ -3109,1465 +3109,13 @@ export type Database = {
   }
   public: {
     Tables: {
-      actions: {
-        Row: {
-          content: string
-          created_at: string | null
-          distillation_id: string | null
-          due_date: string | null
-          id: string
-          note_id: string | null
-          outcome_note: string | null
-          priority: string | null
-          source_context: string | null
-          status: string | null
-          universe_id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          content: string
-          created_at?: string | null
-          distillation_id?: string | null
-          due_date?: string | null
-          id?: string
-          note_id?: string | null
-          outcome_note?: string | null
-          priority?: string | null
-          source_context?: string | null
-          status?: string | null
-          universe_id: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          content?: string
-          created_at?: string | null
-          distillation_id?: string | null
-          due_date?: string | null
-          id?: string
-          note_id?: string | null
-          outcome_note?: string | null
-          priority?: string | null
-          source_context?: string | null
-          status?: string | null
-          universe_id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "actions_distillation_id_fkey"
-            columns: ["distillation_id"]
-            referencedRelation: "distillations"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "actions_note_id_fkey"
-            columns: ["note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "actions_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      admin_grants: {
-        Row: {
-          admin_id: string
-          created_at: string | null
-          credits_amount: number | null
-          grant_type: string
-          id: string
-          notes: string | null
-          subscription_days: number | null
-          subscription_plan: string | null
-          target_user_id: string
-        }
-        Insert: {
-          admin_id: string
-          created_at?: string | null
-          credits_amount?: number | null
-          grant_type: string
-          id?: string
-          notes?: string | null
-          subscription_days?: number | null
-          subscription_plan?: string | null
-          target_user_id: string
-        }
-        Update: {
-          admin_id?: string
-          created_at?: string | null
-          credits_amount?: number | null
-          grant_type?: string
-          id?: string
-          notes?: string | null
-          subscription_days?: number | null
-          subscription_plan?: string | null
-          target_user_id?: string
-        }
-        Relationships: []
-      }
-      admin_settings: {
-        Row: {
-          key: string
-          updated_at: string | null
-          updated_by: string | null
-          value: string | null
-        }
-        Insert: {
-          key: string
-          updated_at?: string | null
-          updated_by?: string | null
-          value?: string | null
-        }
-        Update: {
-          key?: string
-          updated_at?: string | null
-          updated_by?: string | null
-          value?: string | null
-        }
-        Relationships: []
-      }
-      analyses: {
-        Row: {
-          created_at: string | null
-          error_message: string | null
-          id: string
-          source_content: string | null
-          source_type: string
-          source_url: string | null
-          status: string | null
-          title: string | null
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          error_message?: string | null
-          id?: string
-          source_content?: string | null
-          source_type: string
-          source_url?: string | null
-          status?: string | null
-          title?: string | null
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          error_message?: string | null
-          id?: string
-          source_content?: string | null
-          source_type?: string
-          source_url?: string | null
-          status?: string | null
-          title?: string | null
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      anticipation_items: {
-        Row: {
-          confidence: string | null
-          content: string
-          created_at: string | null
-          id: string
-          item_type: string
-          reasoning: string | null
-          related_note_ids: string[] | null
-          status: string | null
-          user_id: string
-        }
-        Insert: {
-          confidence?: string | null
-          content: string
-          created_at?: string | null
-          id?: string
-          item_type: string
-          reasoning?: string | null
-          related_note_ids?: string[] | null
-          status?: string | null
-          user_id: string
-        }
-        Update: {
-          confidence?: string | null
-          content?: string
-          created_at?: string | null
-          id?: string
-          item_type?: string
-          reasoning?: string | null
-          related_note_ids?: string[] | null
-          status?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      candidate_nodes: {
-        Row: {
-          candidate_type: string
-          created_at: string | null
-          id: string
-          raw_text: string | null
-          source: string
-          summary: string
-          tags: string[] | null
-          title: string
-          universe_id: string
-          user_id: string
-        }
-        Insert: {
-          candidate_type: string
-          created_at?: string | null
-          id?: string
-          raw_text?: string | null
-          source: string
-          summary?: string
-          tags?: string[] | null
-          title?: string
-          universe_id: string
-          user_id: string
-        }
-        Update: {
-          candidate_type?: string
-          created_at?: string | null
-          id?: string
-          raw_text?: string | null
-          source?: string
-          summary?: string
-          tags?: string[] | null
-          title?: string
-          universe_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "candidate_nodes_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      cognitive_reports: {
-        Row: {
-          bias_signatures: Json | null
-          blind_spots: Json | null
-          created_at: string | null
-          dominant_themes: Json | null
-          id: string
-          intellectual_diet: Json | null
-          notes_analyzed: number | null
-          report_markdown: string | null
-          stagnation_alerts: Json | null
-          thinking_style: string | null
-          user_id: string
-        }
-        Insert: {
-          bias_signatures?: Json | null
-          blind_spots?: Json | null
-          created_at?: string | null
-          dominant_themes?: Json | null
-          id?: string
-          intellectual_diet?: Json | null
-          notes_analyzed?: number | null
-          report_markdown?: string | null
-          stagnation_alerts?: Json | null
-          thinking_style?: string | null
-          user_id: string
-        }
-        Update: {
-          bias_signatures?: Json | null
-          blind_spots?: Json | null
-          created_at?: string | null
-          dominant_themes?: Json | null
-          id?: string
-          intellectual_diet?: Json | null
-          notes_analyzed?: number | null
-          report_markdown?: string | null
-          stagnation_alerts?: Json | null
-          thinking_style?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      credit_ledger: {
-        Row: {
-          admin_id: string | null
-          balance_after: number
-          created_at: string | null
-          delta: number
-          id: string
-          reason: string
-          ref_id: string | null
-          user_id: string
-        }
-        Insert: {
-          admin_id?: string | null
-          balance_after: number
-          created_at?: string | null
-          delta: number
-          id?: string
-          reason: string
-          ref_id?: string | null
-          user_id: string
-        }
-        Update: {
-          admin_id?: string | null
-          balance_after?: number
-          created_at?: string | null
-          delta?: number
-          id?: string
-          reason?: string
-          ref_id?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      distillations: {
-        Row: {
-          actions_markdown: string | null
-          confidence: number | null
-          created_at: string | null
-          facts_markdown: string | null
-          id: string
-          insights_markdown: string | null
-          key_insight: string | null
-          methods_markdown: string | null
-          note_id: string | null
-          opinions_markdown: string | null
-          source_label: string | null
-          source_text: string | null
-          tags: string[] | null
-          title: string | null
-          universe_id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          actions_markdown?: string | null
-          confidence?: number | null
-          created_at?: string | null
-          facts_markdown?: string | null
-          id?: string
-          insights_markdown?: string | null
-          key_insight?: string | null
-          methods_markdown?: string | null
-          note_id?: string | null
-          opinions_markdown?: string | null
-          source_label?: string | null
-          source_text?: string | null
-          tags?: string[] | null
-          title?: string | null
-          universe_id: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          actions_markdown?: string | null
-          confidence?: number | null
-          created_at?: string | null
-          facts_markdown?: string | null
-          id?: string
-          insights_markdown?: string | null
-          key_insight?: string | null
-          methods_markdown?: string | null
-          note_id?: string | null
-          opinions_markdown?: string | null
-          source_label?: string | null
-          source_text?: string | null
-          tags?: string[] | null
-          title?: string | null
-          universe_id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "distillations_note_id_fkey"
-            columns: ["note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "distillations_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      galaxy_positions: {
-        Row: {
-          cx: number
-          cy: number
-          cz: number
-          id: string
-          is_manual: boolean
-          tag: string
-          universe_id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          cx: number
-          cy: number
-          cz: number
-          id?: string
-          is_manual?: boolean
-          tag: string
-          universe_id: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          cx?: number
-          cy?: number
-          cz?: number
-          id?: string
-          is_manual?: boolean
-          tag?: string
-          universe_id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "galaxy_positions_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      knowledge_chunks: {
-        Row: {
-          chunk_index: number
-          content: string
-          created_at: string | null
-          id: string
-          metadata: Json | null
-          note_id: string
-          project_id: string
-          search_vector: unknown | null
-          source_title: string | null
-          source_type: string | null
-          tokens_estimate: number | null
-          universe_id: string
-          user_id: string
-        }
-        Insert: {
-          chunk_index: number
-          content: string
-          created_at?: string | null
-          id?: string
-          metadata?: Json | null
-          note_id: string
-          project_id?: string
-          search_vector?: unknown | null
-          source_title?: string | null
-          source_type?: string | null
-          tokens_estimate?: number | null
-          universe_id: string
-          user_id: string
-        }
-        Update: {
-          chunk_index?: number
-          content?: string
-          created_at?: string | null
-          id?: string
-          metadata?: Json | null
-          note_id?: string
-          project_id?: string
-          search_vector?: unknown | null
-          source_title?: string | null
-          source_type?: string | null
-          tokens_estimate?: number | null
-          universe_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "knowledge_chunks_note_id_fkey"
-            columns: ["note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "knowledge_chunks_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      manual_order_reviews: {
-        Row: {
-          action: string
-          id: string
-          notes: string | null
-          order_id: string
-          reject_reason: string | null
-          reviewed_at: string | null
-          reviewer_id: string
-        }
-        Insert: {
-          action: string
-          id?: string
-          notes?: string | null
-          order_id: string
-          reject_reason?: string | null
-          reviewed_at?: string | null
-          reviewer_id: string
-        }
-        Update: {
-          action?: string
-          id?: string
-          notes?: string | null
-          order_id?: string
-          reject_reason?: string | null
-          reviewed_at?: string | null
-          reviewer_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "manual_order_reviews_order_id_fkey"
-            columns: ["order_id"]
-            referencedRelation: "manual_orders"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      manual_order_submissions: {
-        Row: {
-          id: string
-          note: string | null
-          order_id: string
-          payer_nickname: string | null
-          payment_amount_fen: number | null
-          payment_method: string | null
-          payment_time: string | null
-          proof_image_url: string
-          submitted_at: string | null
-          user_id: string
-        }
-        Insert: {
-          id?: string
-          note?: string | null
-          order_id: string
-          payer_nickname?: string | null
-          payment_amount_fen?: number | null
-          payment_method?: string | null
-          payment_time?: string | null
-          proof_image_url: string
-          submitted_at?: string | null
-          user_id: string
-        }
-        Update: {
-          id?: string
-          note?: string | null
-          order_id?: string
-          payer_nickname?: string | null
-          payment_amount_fen?: number | null
-          payment_method?: string | null
-          payment_time?: string | null
-          proof_image_url?: string
-          submitted_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "manual_order_submissions_order_id_fkey"
-            columns: ["order_id"]
-            referencedRelation: "manual_orders"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      manual_orders: {
-        Row: {
-          amount_fen: number
-          created_at: string | null
-          expires_at: string
-          fulfilled_at: string | null
-          id: string
-          order_no: string
-          payment_method: string | null
-          product_code: string
-          product_name: string
-          product_type: string
-          reject_reason: string | null
-          status: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          amount_fen: number
-          created_at?: string | null
-          expires_at: string
-          fulfilled_at?: string | null
-          id?: string
-          order_no: string
-          payment_method?: string | null
-          product_code: string
-          product_name: string
-          product_type: string
-          reject_reason?: string | null
-          status?: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          amount_fen?: number
-          created_at?: string | null
-          expires_at?: string
-          fulfilled_at?: string | null
-          id?: string
-          order_no?: string
-          payment_method?: string | null
-          product_code?: string
-          product_name?: string
-          product_type?: string
-          reject_reason?: string | null
-          status?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      memory_wake_items: {
-        Row: {
-          created_at: string | null
-          id: string
-          reason: string | null
-          related_note_id: string | null
-          relevance: string | null
-          status: string | null
-          trigger_note_id: string | null
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string
-          reason?: string | null
-          related_note_id?: string | null
-          relevance?: string | null
-          status?: string | null
-          trigger_note_id?: string | null
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          id?: string
-          reason?: string | null
-          related_note_id?: string | null
-          relevance?: string | null
-          status?: string | null
-          trigger_note_id?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "memory_wake_items_related_note_id_fkey"
-            columns: ["related_note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "memory_wake_items_trigger_note_id_fkey"
-            columns: ["trigger_note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      node_positions: {
-        Row: {
-          id: string
-          is_manual: boolean
-          note_id: string
-          universe_id: string
-          updated_at: string | null
-          user_id: string
-          x: number
-          y: number
-          z: number
-        }
-        Insert: {
-          id?: string
-          is_manual?: boolean
-          note_id: string
-          universe_id: string
-          updated_at?: string | null
-          user_id: string
-          x: number
-          y: number
-          z: number
-        }
-        Update: {
-          id?: string
-          is_manual?: boolean
-          note_id?: string
-          universe_id?: string
-          updated_at?: string | null
-          user_id?: string
-          x?: number
-          y?: number
-          z?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "node_positions_note_id_fkey"
-            columns: ["note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "node_positions_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      notes: {
-        Row: {
-          analysis_content: Json | null
-          analysis_id: string | null
-          analysis_markdown: string | null
-          content_hash: string | null
-          content_markdown: string | null
-          created_at: string | null
-          deleted_at: string | null
-          id: string
-          is_edited: boolean | null
-          key_points: Json | null
-          mindmap_data: Json | null
-          mindmap_markdown: string | null
-          node_type: string | null
-          obsidian_import_id: string | null
-          obsidian_path: string | null
-          summary: string | null
-          summary_markdown: string | null
-          tags: string[] | null
-          title: string | null
-          universe_id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          analysis_content?: Json | null
-          analysis_id?: string | null
-          analysis_markdown?: string | null
-          content_hash?: string | null
-          content_markdown?: string | null
-          created_at?: string | null
-          deleted_at?: string | null
-          id?: string
-          is_edited?: boolean | null
-          key_points?: Json | null
-          mindmap_data?: Json | null
-          mindmap_markdown?: string | null
-          node_type?: string | null
-          obsidian_import_id?: string | null
-          obsidian_path?: string | null
-          summary?: string | null
-          summary_markdown?: string | null
-          tags?: string[] | null
-          title?: string | null
-          universe_id: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          analysis_content?: Json | null
-          analysis_id?: string | null
-          analysis_markdown?: string | null
-          content_hash?: string | null
-          content_markdown?: string | null
-          created_at?: string | null
-          deleted_at?: string | null
-          id?: string
-          is_edited?: boolean | null
-          key_points?: Json | null
-          mindmap_data?: Json | null
-          mindmap_markdown?: string | null
-          node_type?: string | null
-          obsidian_import_id?: string | null
-          obsidian_path?: string | null
-          summary?: string | null
-          summary_markdown?: string | null
-          tags?: string[] | null
-          title?: string | null
-          universe_id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "notes_analysis_id_fkey"
-            columns: ["analysis_id"]
-            referencedRelation: "analyses"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "notes_obsidian_import_id_fkey"
-            columns: ["obsidian_import_id"]
-            referencedRelation: "obsidian_imports"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "notes_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      obsidian_imports: {
-        Row: {
-          created_at: string | null
-          deleted: number
-          error_msg: string | null
-          file_name: string
-          finished_at: string | null
-          id: string
-          imported: number
-          is_sync: boolean
-          renamed: number
-          skipped: number
-          status: string
-          total_files: number
-          updated: number
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          deleted?: number
-          error_msg?: string | null
-          file_name: string
-          finished_at?: string | null
-          id?: string
-          imported?: number
-          is_sync?: boolean
-          renamed?: number
-          skipped?: number
-          status?: string
-          total_files?: number
-          updated?: number
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          deleted?: number
-          error_msg?: string | null
-          file_name?: string
-          finished_at?: string | null
-          id?: string
-          imported?: number
-          is_sync?: boolean
-          renamed?: number
-          skipped?: number
-          status?: string
-          total_files?: number
-          updated?: number
-          user_id?: string
-        }
-        Relationships: []
-      }
-      payment_orders: {
-        Row: {
-          alipay_trade_no: string | null
-          amount_fen: number
-          created_at: string | null
-          id: string
-          item_id: string
-          item_name: string
-          order_no: string
-          status: string
-          type: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          alipay_trade_no?: string | null
-          amount_fen: number
-          created_at?: string | null
-          id?: string
-          item_id: string
-          item_name: string
-          order_no: string
-          status?: string
-          type: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          alipay_trade_no?: string | null
-          amount_fen?: number
-          created_at?: string | null
-          id?: string
-          item_id?: string
-          item_name?: string
-          order_no?: string
-          status?: string
-          type?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          avatar_url: string | null
-          ban_reason: string | null
-          banned_at: string | null
-          created_at: string | null
-          id: string
-          is_admin: boolean
-          theme: string | null
-          tour_state: Json | null
-          updated_at: string | null
-          username: string | null
-        }
-        Insert: {
-          avatar_url?: string | null
-          ban_reason?: string | null
-          banned_at?: string | null
-          created_at?: string | null
-          id: string
-          is_admin?: boolean
-          theme?: string | null
-          tour_state?: Json | null
-          updated_at?: string | null
-          username?: string | null
-        }
-        Update: {
-          avatar_url?: string | null
-          ban_reason?: string | null
-          banned_at?: string | null
-          created_at?: string | null
-          id?: string
-          is_admin?: boolean
-          theme?: string | null
-          tour_state?: Json | null
-          updated_at?: string | null
-          username?: string | null
-        }
-        Relationships: []
-      }
-      rag_conversations: {
-        Row: {
-          answer: string
-          citations: Json | null
-          created_at: string | null
-          id: string
-          project_id: string
-          query: string
-          universe_id: string
-          user_id: string
-        }
-        Insert: {
-          answer: string
-          citations?: Json | null
-          created_at?: string | null
-          id?: string
-          project_id?: string
-          query: string
-          universe_id: string
-          user_id: string
-        }
-        Update: {
-          answer?: string
-          citations?: Json | null
-          created_at?: string | null
-          id?: string
-          project_id?: string
-          query?: string
-          universe_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "rag_conversations_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      reality_anchors: {
-        Row: {
-          anchor_type: string
-          created_at: string
-          id: string
-          label: string
-          target_id: string
-          universe_id: string
-          user_id: string
-        }
-        Insert: {
-          anchor_type: string
-          created_at?: string
-          id?: string
-          label?: string
-          target_id: string
-          universe_id: string
-          user_id: string
-        }
-        Update: {
-          anchor_type?: string
-          created_at?: string
-          id?: string
-          label?: string
-          target_id?: string
-          universe_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "reality_anchors_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      subscriptions: {
-        Row: {
-          created_at: string | null
-          current_period_end: string | null
-          current_period_start: string | null
-          id: string
-          plan: string
-          status: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          current_period_end?: string | null
-          current_period_start?: string | null
-          id?: string
-          plan?: string
-          status?: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          current_period_end?: string | null
-          current_period_start?: string | null
-          id?: string
-          plan?: string
-          status?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      system_events: {
-        Row: {
-          created_at: string | null
-          event_type: string
-          id: string
-          message: string | null
-          payload: Json | null
-          severity: string
-          user_id: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          event_type: string
-          id?: string
-          message?: string | null
-          payload?: Json | null
-          severity?: string
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          event_type?: string
-          id?: string
-          message?: string | null
-          payload?: Json | null
-          severity?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      thought_edges: {
-        Row: {
-          confidence: number | null
-          created_at: string | null
-          description: string | null
-          edge_type: string
-          id: string
-          source_id: string
-          target_id: string
-          universe_id: string
-          user_id: string
-        }
-        Insert: {
-          confidence?: number | null
-          created_at?: string | null
-          description?: string | null
-          edge_type: string
-          id?: string
-          source_id: string
-          target_id: string
-          universe_id: string
-          user_id: string
-        }
-        Update: {
-          confidence?: number | null
-          created_at?: string | null
-          description?: string | null
-          edge_type?: string
-          id?: string
-          source_id?: string
-          target_id?: string
-          universe_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "thought_edges_source_id_fkey"
-            columns: ["source_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "thought_edges_target_id_fkey"
-            columns: ["target_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "thought_edges_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      thought_relationships: {
-        Row: {
-          created_at: string | null
-          id: string
-          rationale: string | null
-          relationship_type: string
-          source_note_id: string
-          strength: number | null
-          target_note_id: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string | null
-          id?: string
-          rationale?: string | null
-          relationship_type: string
-          source_note_id: string
-          strength?: number | null
-          target_note_id: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string | null
-          id?: string
-          rationale?: string | null
-          relationship_type?: string
-          source_note_id?: string
-          strength?: number | null
-          target_note_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "thought_relationships_source_note_id_fkey"
-            columns: ["source_note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "thought_relationships_target_note_id_fkey"
-            columns: ["target_note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      universes: {
-        Row: {
-          color_seed: string | null
-          created_at: string | null
-          description: string | null
-          icon: string | null
-          id: string
-          is_default: boolean
-          name: string
-          sort_order: number
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          color_seed?: string | null
-          created_at?: string | null
-          description?: string | null
-          icon?: string | null
-          id?: string
-          is_default?: boolean
-          name: string
-          sort_order?: number
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          color_seed?: string | null
-          created_at?: string | null
-          description?: string | null
-          icon?: string | null
-          id?: string
-          is_default?: boolean
-          name?: string
-          sort_order?: number
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      usage_events: {
-        Row: {
-          cost_actual: number | null
-          cost_estimate: number
-          created_at: string | null
-          feature_code: string
-          id: string
-          metadata: Json | null
-          ref_id: string | null
-          settled_at: string | null
-          status: string
-          user_id: string
-        }
-        Insert: {
-          cost_actual?: number | null
-          cost_estimate?: number
-          created_at?: string | null
-          feature_code: string
-          id?: string
-          metadata?: Json | null
-          ref_id?: string | null
-          settled_at?: string | null
-          status?: string
-          user_id: string
-        }
-        Update: {
-          cost_actual?: number | null
-          cost_estimate?: number
-          created_at?: string | null
-          feature_code?: string
-          id?: string
-          metadata?: Json | null
-          ref_id?: string | null
-          settled_at?: string | null
-          status?: string
-          user_id?: string
-        }
-        Relationships: []
-      }
-      user_credits: {
-        Row: {
-          balance: number
-          id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          balance?: number
-          id?: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          balance?: number
-          id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: []
-      }
-      wiki_pages: {
-        Row: {
-          compiled_at: string | null
-          content_markdown: string | null
-          created_at: string | null
-          id: string
-          metadata: Json | null
-          page_type: string
-          search_vector: unknown | null
-          slug: string
-          source_chunk_ids: string[] | null
-          source_note_ids: string[] | null
-          summary: string | null
-          tags: string[] | null
-          title: string
-          universe_id: string
-          updated_at: string | null
-          user_id: string
-          version: number
-        }
-        Insert: {
-          compiled_at?: string | null
-          content_markdown?: string | null
-          created_at?: string | null
-          id?: string
-          metadata?: Json | null
-          page_type?: string
-          search_vector?: unknown | null
-          slug: string
-          source_chunk_ids?: string[] | null
-          source_note_ids?: string[] | null
-          summary?: string | null
-          tags?: string[] | null
-          title: string
-          universe_id: string
-          updated_at?: string | null
-          user_id: string
-          version?: number
-        }
-        Update: {
-          compiled_at?: string | null
-          content_markdown?: string | null
-          created_at?: string | null
-          id?: string
-          metadata?: Json | null
-          page_type?: string
-          search_vector?: unknown | null
-          slug?: string
-          source_chunk_ids?: string[] | null
-          source_note_ids?: string[] | null
-          summary?: string | null
-          tags?: string[] | null
-          title?: string
-          universe_id?: string
-          updated_at?: string | null
-          user_id?: string
-          version?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "wiki_pages_universe_id_fkey"
-            columns: ["universe_id"]
-            referencedRelation: "universes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      wiki_source_refs: {
-        Row: {
-          chunk_id: string | null
-          created_at: string | null
-          excerpt: string | null
-          id: string
-          note_id: string | null
-          section_anchor: string | null
-          wiki_page_id: string
-        }
-        Insert: {
-          chunk_id?: string | null
-          created_at?: string | null
-          excerpt?: string | null
-          id?: string
-          note_id?: string | null
-          section_anchor?: string | null
-          wiki_page_id: string
-        }
-        Update: {
-          chunk_id?: string | null
-          created_at?: string | null
-          excerpt?: string | null
-          id?: string
-          note_id?: string | null
-          section_anchor?: string | null
-          wiki_page_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "wiki_source_refs_chunk_id_fkey"
-            columns: ["chunk_id"]
-            referencedRelation: "knowledge_chunks"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "wiki_source_refs_note_id_fkey"
-            columns: ["note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "wiki_source_refs_wiki_page_id_fkey"
-            columns: ["wiki_page_id"]
-            referencedRelation: "wiki_pages"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      zoom_cache: {
-        Row: {
-          content_markdown: string | null
-          created_at: string | null
-          id: string
-          note_id: string
-          user_id: string
-          zoom_level: number
-        }
-        Insert: {
-          content_markdown?: string | null
-          created_at?: string | null
-          id?: string
-          note_id: string
-          user_id: string
-          zoom_level: number
-        }
-        Update: {
-          content_markdown?: string | null
-          created_at?: string | null
-          id?: string
-          note_id?: string
-          user_id?: string
-          zoom_level?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "zoom_cache_note_id_fkey"
-            columns: ["note_id"]
-            referencedRelation: "notes"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      add_credits: {
-        Args: { p_amount: number; p_user_id: string }
-        Returns: undefined
-      }
-      deduct_credits: {
-        Args: { p_amount: number; p_user_id: string }
-        Returns: undefined
-      }
-      is_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never
@@ -4579,171 +3127,6 @@ export type Database = {
   realtime: {
     Tables: {
       messages: {
-        Row: {
-          event: string | null
-          extension: string
-          id: string
-          inserted_at: string
-          payload: Json | null
-          private: boolean | null
-          topic: string
-          updated_at: string
-        }
-        Insert: {
-          event?: string | null
-          extension: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic: string
-          updated_at?: string
-        }
-        Update: {
-          event?: string | null
-          extension?: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      messages_2026_04_15: {
-        Row: {
-          event: string | null
-          extension: string
-          id: string
-          inserted_at: string
-          payload: Json | null
-          private: boolean | null
-          topic: string
-          updated_at: string
-        }
-        Insert: {
-          event?: string | null
-          extension: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic: string
-          updated_at?: string
-        }
-        Update: {
-          event?: string | null
-          extension?: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      messages_2026_04_16: {
-        Row: {
-          event: string | null
-          extension: string
-          id: string
-          inserted_at: string
-          payload: Json | null
-          private: boolean | null
-          topic: string
-          updated_at: string
-        }
-        Insert: {
-          event?: string | null
-          extension: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic: string
-          updated_at?: string
-        }
-        Update: {
-          event?: string | null
-          extension?: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      messages_2026_04_17: {
-        Row: {
-          event: string | null
-          extension: string
-          id: string
-          inserted_at: string
-          payload: Json | null
-          private: boolean | null
-          topic: string
-          updated_at: string
-        }
-        Insert: {
-          event?: string | null
-          extension: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic: string
-          updated_at?: string
-        }
-        Update: {
-          event?: string | null
-          extension?: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      messages_2026_04_18: {
-        Row: {
-          event: string | null
-          extension: string
-          id: string
-          inserted_at: string
-          payload: Json | null
-          private: boolean | null
-          topic: string
-          updated_at: string
-        }
-        Insert: {
-          event?: string | null
-          extension: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic: string
-          updated_at?: string
-        }
-        Update: {
-          event?: string | null
-          extension?: string
-          id?: string
-          inserted_at?: string
-          payload?: Json | null
-          private?: boolean | null
-          topic?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      messages_2026_04_19: {
         Row: {
           event: string | null
           extension: string
@@ -4810,6 +3193,105 @@ export type Database = {
         Relationships: []
       }
       messages_2026_04_21: {
+        Row: {
+          event: string | null
+          extension: string
+          id: string
+          inserted_at: string
+          payload: Json | null
+          private: boolean | null
+          topic: string
+          updated_at: string
+        }
+        Insert: {
+          event?: string | null
+          extension: string
+          id?: string
+          inserted_at?: string
+          payload?: Json | null
+          private?: boolean | null
+          topic: string
+          updated_at?: string
+        }
+        Update: {
+          event?: string | null
+          extension?: string
+          id?: string
+          inserted_at?: string
+          payload?: Json | null
+          private?: boolean | null
+          topic?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      messages_2026_04_22: {
+        Row: {
+          event: string | null
+          extension: string
+          id: string
+          inserted_at: string
+          payload: Json | null
+          private: boolean | null
+          topic: string
+          updated_at: string
+        }
+        Insert: {
+          event?: string | null
+          extension: string
+          id?: string
+          inserted_at?: string
+          payload?: Json | null
+          private?: boolean | null
+          topic: string
+          updated_at?: string
+        }
+        Update: {
+          event?: string | null
+          extension?: string
+          id?: string
+          inserted_at?: string
+          payload?: Json | null
+          private?: boolean | null
+          topic?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      messages_2026_04_23: {
+        Row: {
+          event: string | null
+          extension: string
+          id: string
+          inserted_at: string
+          payload: Json | null
+          private: boolean | null
+          topic: string
+          updated_at: string
+        }
+        Insert: {
+          event?: string | null
+          extension: string
+          id?: string
+          inserted_at?: string
+          payload?: Json | null
+          private?: boolean | null
+          topic: string
+          updated_at?: string
+        }
+        Update: {
+          event?: string | null
+          extension?: string
+          id?: string
+          inserted_at?: string
+          payload?: Json | null
+          private?: boolean | null
+          topic?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      messages_2026_04_24: {
         Row: {
           event: string | null
           extension: string
